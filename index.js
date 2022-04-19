@@ -13,8 +13,12 @@ app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
-app.get('',(req, res)=>{
+app.get('/',(req, res)=>{
     res.render('index')
   })
 
-const port = process.env.PORT || 3000
+const port = 3000
+
+app.listen(process.env.PORT || port, function() {
+  console.log("server online on port " + port);
+});
